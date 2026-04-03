@@ -277,7 +277,9 @@ def delete_inform(id):
     supabase.table("inform").delete().eq("id", id).execute()
     return redirect("/admin")
 
-app.run(debug=True)
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
     send_sms(phone, "Twilio SMS working 🚀")
