@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Missing Persons</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="navbar">
+    <style>
+a {
+    color: rgb(250, 250, 254);
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+</style>
+
+<a href="/">Home</a>
+    </div>
+</head>
+
+<body>
+
+<h1>Missing Persons</h1>
+
+<div class="gallery">
+
+
+
+{% for p in persons %}
+<div class="card">
+
+    <img src="/static/uploads/{{ p.photo }}" width="150">
+
+    <h3>{{ p.name }}</h3>
+    <p>Contact: {{ p.phone }}</p>
+
+    <!-- 🔥 ADMIN ONLY BUTTON -->
+    {% if session.get("admin") %}
+    <a href="/found/{{ p.id }}">
+        <button>Mark as Found</button>
+    </a>
+    <p>Status: 
+    {% if p.status == "found" %}
+        <span style="color:lime;">FOUND ✅</span>
+    {% else %}
+        <span style="color:red;">MISSING ❌</span>
+    {% endif %}
+</p>
+<a href="/inform_found/{{ p.id }}">
+        <button style="background: orange;">🚨 Inform Admin</button>
+    </a>
+
+{% endif %}
+</div>
+{% endfor %}
+
+
+</div>
+{% for p in persons %}
+
+{% if not p.informed %}
+    <a href="/inform_found/{{ p.id }}">
+        <button>🚨 Inform Admin</button>
+    </a>
+{% else %}
+    <button disabled>Already Informed</button>
+{% endif %}
+{% endfor %}
+</body>
+</html>

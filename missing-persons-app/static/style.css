@@ -1,0 +1,376 @@
+/* BACKGROUND IMAGE */
+
+body{
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+url("/static/bg.jpg") no-repeat center top / cover ;
+
+color:rgb(249, 245, 245);
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;   /* 🔥 always fixed at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+/* push content down so it doesn't hide */
+body {
+    margin: 0;
+    padding-top: 80px;
+}
+
+.logo{
+font-size:70px;
+color:#ff0000;
+font-weight:bold;
+}
+
+/* MENU */
+
+.menu a{
+margin:0 15px;
+color:white;
+text-decoration:none;
+font-size:50px;
+}
+
+.menu a:hover{
+color:red;
+}
+
+/* HERO */
+
+.content{
+position:absolute;
+top:20%;
+left:900px;
+max-width:5000px;
+}
+
+.content h1{
+font-size:120px;
+font-weight:bold;
+}
+
+.content span{
+color:red;
+}
+
+.content p{
+margin-top:10px;
+line-height:1.6;
+font-size:45px;
+}
+
+/* RED BUTTON */
+
+.join-btn{
+margin-top:50px;
+padding:30px 40px;
+background:red;
+border:none;
+color:white;
+font-size:30px;
+border-radius:20px;
+cursor:pointer;
+box-shadow:0 0 10px red;
+}
+
+.join-btn:hover{
+background:#cc0000;
+}
+
+/* RIGHT PANEL */
+
+.panel{
+position:absolute;
+right:60px;
+top:20%;
+width:310px;
+padding:30px;
+background:rgba(137, 95, 95, 0.8);
+border-radius:12px;
+text-align:center;
+}
+
+/* BIG BUTTONS */
+
+.panel button{
+width:100%;
+margin:12px 0;
+padding:15px;
+border:none;
+background:red;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.panel button:hover{
+background:#cc0000;
+transform:scale(1.05);
+}
+
+
+/*complaint css*/
+
+/* FORM CONTAINER */
+
+.form-container{
+width:400px;
+margin:200px auto;
+padding:100px;
+background:rgba(0,0,0,0.7);
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,0,0,0.5);
+text-align:center;
+}
+
+/* TITLE */
+
+.form-container h2{
+margin-bottom:10px;
+color:#ff4d4d;
+}
+
+/* INPUT BOXES */
+
+.form-container input{
+width:100%;
+padding:20px;
+margin:20px 0;
+border:none;
+border-radius:10px;
+outline:none;
+background:rgba(255,255,255,0.1);
+color:white;
+font-size:30px;
+}
+
+/* FILE INPUT */
+
+.form-container input[type="file"]{
+background:transparent;
+color:white;
+}
+
+/* BUTTON */
+
+.form-container button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:red;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.form-container button:hover{
+background:#cc0000;
+transform:scale(1.05);
+}
+
+
+
+.found-btn {
+    background: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+.inform-container {
+    width: 320px;
+    margin: 200px auto;
+    padding: 100px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
+}
+
+.inform-container h1 {
+    color: #ff3b3b;
+    margin-bottom: 20px;
+}
+
+.inform-container p {
+    font-size: 24px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 22px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+}
+
+button {
+    background: red;
+    color: white;
+    font-size: 26px;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+
+
+
+
+.card {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px red;
+}
+
+.card img {
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+
+
+.card {
+    width: 450px;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background: red;
+    transform: scale(1.05);
+}
+
+.tab-content {
+    animation: fadeIn 0.5s ease-in;
+}
+
+
+.tabs button {
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+}
+
+.tabs button:hover {
+    background: red;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(0,0,0,0.8);
+    border: 10px solid red;
+    border-radius: 25px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 20px red;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.ok-btn {
+    background: green;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.photo {
+    width: 400px;
+    max-width: 1000px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px 0;
+    border: 2px solid rgba(255,0,0,0.5);
+    transition: 0.3s;
+}
+
+.photo:hover {
+    transform: scale(1.15);
+}
+

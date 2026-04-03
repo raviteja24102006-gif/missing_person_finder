@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inform Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div class="navbar">
+    <style>
+a {
+    color: rgb(250, 250, 254);
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+</style>
+
+<a href="/">Home</a>
+    </div>
+</head>
+
+<body>
+
+<div class="inform-container">
+
+    <h1>📍 Report Sighting</h1>
+    <p>Help us locate the missing person by sharing details</p>
+    <div class="grid">
+{% for i in informs %}
+    <div class="card">
+    
+        <p><b>location:</b> {{ i.location }}</p>
+        <p><b>message:</b>{{ i.message }}</p>
+
+        <a href="/delete_inform/{{ i.id }}">
+            <button class="ok-btn">OK</button>
+        </a>
+    </div>
+{% endfor %}
+</div>
+    <form method="POST">
+
+        <input type="text" name="location" id="location" placeholder="📍 Your Location" required>
+
+        <textarea name="description" placeholder="📝 Describe where and when you saw the person..." required></textarea>
+
+        <button type="submit">🚨 Submit Report</button>
+        
+        <script>
+navigator.geolocation.getCurrentPosition(pos => {
+    document.getElementById("location").value =
+        pos.coords.latitude + ", " + pos.coords.longitude;
+});
+</script>
+    </form>
+
+</div>
+
+</body>
+</html>

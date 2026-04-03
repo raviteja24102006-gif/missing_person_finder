@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>File Complaint</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <div class="navbar">
+    <style>
+a {
+    color: rgb(250, 250, 254);
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+</style>
+
+<a href="/">Home</a>
+    </div>
+</head>
+
+<body>
+
+    
+
+<div class="form-container">
+
+    <h2>Report Missing Person</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input type="text" name="name" placeholder="Enter full Name" required>
+
+        <input type="text" name="phone" placeholder="Phone Number" required>
+       
+        <h2>missing person aadhar photo</h2>
+
+        <input type="file" name="aadhar" required>
+
+        <h2>missing person photo</h2>
+
+        <input type="file" name="photo" required>
+
+        <button type="submit">Submit Report</button>
+
+    </form>
+    
+
+</div>
+
+</body>
+</html>

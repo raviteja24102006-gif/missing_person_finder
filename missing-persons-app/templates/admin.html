@@ -1,0 +1,122 @@
+
+<h2>Admin dashboard
+</h2>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="navbar">
+    <style>
+a {
+    color: rgb(250, 250, 254);
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+</style>
+
+<a href="/">Home</a>
+    </div>
+<!-- 🔥 TABS -->
+<div class="tabs">
+    <button onclick="showTab('pending')">Pending</button>
+    <button onclick="showTab('approved')">Approved</button>
+    <button onclick="showTab('found')">Found</button>
+    <button onclick="showTab('feedback')">Feedback</button>
+    <button onclick="showTab('inform')">Inform</button>
+
+</div>
+
+
+<!-- 🔥 TAB CONTENT -->
+
+<div id="pending" class="tab-content">
+{% for p in pending %}
+<div class="card">
+    <h3>{{ p.name }}</h3>
+    <p>Status: {{ p.status }}</p>
+    
+    <!-- ✅ PERSON PHOTO -->
+    <p>Person Photo:</p>
+<img class="photo" src="{{ url_for('static', filename='uploads/' + p.photo) }}">
+
+<p>Aadhar:</p>
+<img class="photo" src="{{ url_for('static', filename='uploads/' + p.aadhar) }}">
+
+    <a href="/approve/{{ p.id }}">
+        <button style="background:green;">Approve</button>
+    </a>
+
+    <a href="/reject/{{ p.id }}">
+        <button style="background:red;">Reject</button>
+    </a>
+</div>
+{% endfor %}
+</div>
+
+<div id="approved" class="tab-content" style="display:none;">
+    <h3>Approved Cases</h3>
+    {% for p in approved %}
+    <div class="card">
+        <h4>{{ p.name }}</h4>
+        <p>Status: {{ p.status }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="found" class="tab-content" style="display:none;">
+    <h3>Found Cases</h3>
+    {% for p in found %}
+    <div class="card">
+        <h4>{{ p.name }}</h4>
+        <p>Status: {{ p.status }}</p>
+    </div>
+    {% endfor %}
+</div>
+<div id="inform" class="tab-content" style="display:none;">
+    <h3>Inform Data</h3>
+
+    {% for i in informs %}
+    <div class="card">
+        <p><b>location:</b> {{ i.locaation }}</p>
+    
+        <p><b>Message:</b> {{ i.message }}</p>
+
+        <a href="/delete_inform/{{ i.id }}"
+           onclick="return confirm('Delete this inform data?')">
+            <button style="background: green;">OK</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<div id="feedback" class="tab-content" style="display:none;">
+    <h3>feedback Data</h3>
+
+    {% for f in feedbacks %}
+<div class="card">
+    <p>{{ f.name }}</p>
+    <p>{{ f.message }}</p>
+
+            <a href="/delete_feedback/{{ f.id }}"
+           onclick="return confirm('Delete the feedback data?')">
+            <button style="background: green;">OK</button>
+        </a>
+</div>
+
+{% endfor %}
+
+    
+    
+</div>
+
+
+<script>
+function showTab(tabName) {
+    let tabs = document.getElementsByClassName("tab-content");
+
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    document.getElementById(tabName).style.display = "block";
+}
+</script>
